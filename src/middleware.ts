@@ -9,7 +9,6 @@ export function middleware(request: NextRequest) {
     request.nextUrl.pathname.startsWith(path)
   );
 
-  console.log("Request URL:", request.nextUrl.pathname);
   if (isProtected && !token) {
     return NextResponse.redirect(new URL("/login", request.url));
   }

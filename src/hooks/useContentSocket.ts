@@ -5,7 +5,7 @@ export function useContentSocket(
   contentId: string,
   onReceive: (data: any) => void
 ) {
-  const socketRef = useRef<Socket>();
+  const socketRef = useRef<Socket | null>(null);
 
   useEffect(() => {
     const socket = io("http://localhost:5000", {
